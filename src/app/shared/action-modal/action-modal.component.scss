@@ -69,8 +69,13 @@ textarea{
     justify-content:space-between
 }
 
+textarea{
+    max-width:100%;
+}
+
 .signup-btn{
     color:blue;
     text-decoration: underline;
     cursor: pointer;
 }
+

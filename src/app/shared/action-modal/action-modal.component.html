@@ -13,7 +13,7 @@
                 </div>
               </div>
               <div class="form-group" id="input">
-                <textarea name="content" id="" cols="37" rows="7" formControlName="content" placeholder="Type Note content Here..."  [ngClass]="{ 'is-invalid': submitted && formControl.content.errors }"></textarea>
+                <textarea name="content" id="" cols="37" rows="auto" formControlName="content" placeholder="Type Note content Here..."  [ngClass]="{ 'is-invalid': submitted && formControl.content.errors }"></textarea>
                 <div *ngIf="submitted && formControl.content.errors" class="invalid-feedback">
                     <div *ngIf="formControl.content.errors.required">Content is required</div>
                 </div> 
