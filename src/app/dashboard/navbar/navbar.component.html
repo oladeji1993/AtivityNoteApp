@@ -6,7 +6,7 @@
     <mat-toolbar class="notes">NOTES</mat-toolbar>
     <mat-nav-list class="navigation-menu">
       <a mat-list-item routerLink="/dashboard/home" routerLinkActive="is-active">Dashboard</a>
-      <a mat-list-item routerLink="auth">Logout</a>
+      <a mat-list-item (click)="logOut()">Logout</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

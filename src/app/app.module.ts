@@ -13,6 +13,8 @@ import { AuthInterceptor } from './shared/auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
+
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     DashboardModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BackButtonDisableModule.forRoot(),
     ToastrModule.forRoot(), // ToastrModule added
     BrowserAnimationsModule, MatTableModule, MatPaginatorModule, MatSortModule,
     CommonModule

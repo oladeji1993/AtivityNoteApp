@@ -11,9 +11,5 @@ export interface RegisterUser {
   }
 
 
-  export interface Note {
-    id: 0,
-    title: "string",
-    content: "string",
-  }
+
   

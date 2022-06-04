@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AlertService } from 'src/app/shared/notification/alert.service';
 import { AuthService } from 'src/app/shared/service/auth/auth.service';
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     public fb: FormBuilder,
     private auth: AuthService,
     private spinner: NgxSpinnerService,
-    private alert: AlertService
+    private alert: AlertService,
+    private cookieService: CookieService
   ) { }
 
   ngOnInit() {
@@ -41,6 +43,7 @@ export class LoginComponent implements OnInit {
     }else{
       this.spinner.show()
       this.auth.loginUser(this.signinForm.value).subscribe((data:any)=>{
+        this.cookieService.set('authorized', data[0].data.email)
         if(data[0].status == 'success'){
           this.spinner.hide()
           this.router.navigate(['dashboard'])
@@ -51,8 +54,7 @@ export class LoginComponent implements OnInit {
         }
       }, err =>{
         this.spinner.hide()
-        let error = err.error
-        this.alert.showError(error[0].message, 'Error');
+        this.alert.showError(err.error.message, 'Error');
       })
     }
   }

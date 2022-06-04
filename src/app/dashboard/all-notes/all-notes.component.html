@@ -34,7 +34,9 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let note; columns: displayedColumns;"></tr>
   </table>
-
+  <div *ngIf="totalNotes == 0">
+    <div>No Note Found</div>
+  </div>
   <mat-paginator #paginator
       [length]="totalNotes"  
       [pageIndex]="0"

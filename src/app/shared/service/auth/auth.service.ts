@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { RegisterUser } from '../../../models/auth.model'
 import { LoginUser } from '../../../models/auth.model'
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Injectable({
@@ -15,6 +16,8 @@ export class AuthService {
 
   constructor(
     private http : HttpClient,
+    private cookieService: CookieService
+
   ) { }
 
   loginUser(loginUser: LoginUser){ 
@@ -24,5 +27,16 @@ export class AuthService {
   registerUser(registerUser: RegisterUser){
     return this.http.post(`${this.baseUrl}/user/`, registerUser);
   };
+
+  IsLoggedIn(){
+    let bool: boolean;
+    let token = this.cookieService.get('authorized');
+    if(token) {
+      bool = true;
+    } else {
+      bool = false;
+    }
+    return bool;
+  }
 
 }

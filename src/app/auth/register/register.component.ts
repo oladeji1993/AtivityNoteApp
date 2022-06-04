@@ -63,8 +63,9 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['auth'])
         this.alert.showSuccess(resp.message, 'Success');
       }, error => {
+        console.log(error);
         this.spinner.hide()
-        this.alert.showError(error.message, 'Error');
+        this.alert.showError(error.error.message, 'Error');
       })
     }
   }
