@@ -1,0 +1,99 @@
+.landing-page{
+    background-size: cover;
+    height: 100vh;
+    background-blend-mode: overlay;
+    background-image: url(/assets/bg.jpg),linear-gradient(rgba(26, 25, 25, 0.9),rgba(27, 26, 26, 0.5));
+}
+
+.global-container{
+	height:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.08);
+	border-radius: 6px;
+}
+
+html,body { 
+	height: 100%; 
+}
+
+.landing-page{
+    background-size: cover;
+    height: 100vh;
+    background-blend-mode: overlay;
+    // background-image: url(/assets/images/background.png),linear-gradient(rgba(26, 25, 25, 0.9),rgba(27, 26, 26, 0.5));
+}
+
+.global-container{
+	height:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+form{
+	padding-top: 5px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+.card-title{ font-weight:300; }
+
+.btn{
+	font-size: 14px;
+	margin-top:20px;
+}
+
+
+.login-form{ 
+	width:330px;
+	margin:20px;
+}
+
+.sign-up{
+	text-align:center;
+	padding:20px 0 0;
+}
+
+.alert{
+	margin-bottom:-30px;
+	font-size: 13px;
+	margin-top:20px;
+}
+
+#input_field{
+    margin-top: 5%;
+}
+
+
+#login{
+	background-color: #01A756;
+	color:#fff
+}
+
+.form-control{
+    outline: none !important;
+    box-shadow: none;
+    border-color: rgb(196, 192, 192);
+}
+
+.form-control option{
+    color:#000
+}
+
+#top{
+    padding:0px 5px !important;
+}
+
+.login-container{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+}
+
+.btn-login{
+    color:blue;
+    cursor: pointer;
+    text-decoration: underline;
+}

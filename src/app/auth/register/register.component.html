@@ -1,0 +1,78 @@
+<div class="landing-page">
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+            <h4 class="card-title text-center" style="font-size: 20px; font-weight: bold; ">Let's Go...</h4>
+            <div class="card-text">
+                <form [formGroup]="registerForm">
+                    <div class="row">
+                        <div class="col-md-12 mb-3" id="top"> 
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" placeholder="first_name" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('first_name')?.invalid}" id="first_name">
+                                <div *ngIf="submitted && registerForm.get('first_name')?.invalid" class="invalid-feedback">
+                                    <div  *ngIf="registerForm.get('first_name')?.hasError('required')">FirstName is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12" id="top"> 
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" placeholder="last_name" formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('last_name')?.invalid}" id="last_name">
+                                <div *ngIf="submitted && registerForm.get('last_name')?.invalid" class="invalid-feedback">
+                                    <div  *ngIf="registerForm.get('last_name')?.hasError('required')">LastName is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row" id="input_field">
+                        <div class="col-md-12" id="top">
+                            <div class="form-group" >
+                                <input type="email" class="form-control form-control-sm" id="exampleInputEmail1"  placeholder="Email address" aria-describedby="emailHelp" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('email')?.invalid}">
+                                <div *ngIf="submitted && registerForm.get('email')?.invalid" class="invalid-feedback">
+                                    <div *ngIf="registerForm.get('email')?.hasError('required')">Email is required</div>
+                                    <div *ngIf="registerForm.get('email')?.hasError('email')">Email must be a valid email address</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row"  id="input_field">
+                        <div class="col-md-12" id="top">
+                            <div class="form-group" >
+                                <input type="password" class="form-control form-control-sm" id="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('password')?.invalid}">
+                                <div *ngIf="submitted && registerForm.get('password')?.invalid" class="invalid-feedback">
+                                    <div *ngIf="registerForm.get('password')?.hasError('required')">Password is required</div>
+                                    <div  *ngIf="registerForm.get('password')?.hasError('minlength')">Password must be at least 6 characters</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row"  id="input_field">
+                        <div class="col-md-12" style="padding:0px 5px !important;">
+                            <div class="form-group" >
+                                <input type="password" class="form-control form-control-sm" id="confirmpassword" formControlName="confirmPassword" placeholder=" Confirm Password" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('confirmPassword')?.invalid}">
+                                <div *ngIf="submitted && formControl.confirmPassword.errors" class="invalid-feedback">
+                                    <div *ngIf="registerForm.get('confirmPassword')?.hasError('required')">Confirm Password is required</div>
+                                    <div *ngIf="registerForm.get('confirmPassword')?.hasError('mustMatch')">Passwords must match</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-container">
+                        <div>Already have an account?</div>
+                        <div class="btn-login" (click)="login()">Login</div>
+                    </div>
+                    <button id="login" (click)="registerUser()" type="submit" class="btn btn-block">REGISTER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div> 
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="ball-spin-clockwise">  
+  <p style="color: white">Please Wait. </p>  
+</ngx-spinner>

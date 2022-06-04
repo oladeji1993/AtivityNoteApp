@@ -1,0 +1,76 @@
+.global-container{
+	height:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+}
+
+form{
+	padding-top: 10px;
+	font-size: 14px;
+	margin-top: 30px;
+}
+
+.card-title{ font-weight:300; }
+
+.btn{
+	font-size: 14px;
+	margin-top:20px;
+}
+
+textarea{
+    outline:none
+}
+
+
+.login-form{ 
+	width:330px;
+	margin:20px;
+}
+
+.sign-up{
+	text-align:center;
+	padding:20px 0 0;
+}
+
+textarea{
+    padding:10px;
+}
+
+.alert{
+	margin-bottom:-30px;
+	font-size: 13px;
+	margin-top:20px;
+}
+
+#input{
+	margin-top:10%
+}
+
+#createbtn{
+	background-color: #01A756;
+	color:#fff;
+    margin-right:15px;
+}
+
+.client-logo{
+    text-align: center;
+}
+
+.form-control{
+    outline: none !important;
+    box-shadow: none;
+    border-color: rgb(196, 192, 192);
+}
+
+.signup-container{
+    display: flex;
+    justify-content:space-between
+}
+
+.signup-btn{
+    color:blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

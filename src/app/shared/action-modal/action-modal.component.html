@@ -1,0 +1,31 @@
+<div class="landing-page">
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+          <div class="card-text">
+            <h3 class="card-title text-center"  style="font-size: 30px; font-weight: bold; ">{{title}}</h3>
+            <form [formGroup]="createNoteForm" (ngSubmit)="createNote()">
+              <div class="form-group" >
+                <label>Title</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Title here..." formControlName="title" [ngClass]="{ 'is-invalid': submitted && formControl.title.errors }" >
+                <div *ngIf="submitted && formControl.title.errors" class="invalid-feedback">
+                  <div *ngIf="formControl.title.errors.required">Title is required</div>
+                </div>
+              </div>
+              <div class="form-group" id="input">
+                <textarea name="content" id="" cols="37" rows="7" formControlName="content" placeholder="Type Note content Here..."  [ngClass]="{ 'is-invalid': submitted && formControl.content.errors }"></textarea>
+                <div *ngIf="submitted && formControl.content.errors" class="invalid-feedback">
+                    <div *ngIf="formControl.content.errors.required">Content is required</div>
+                </div> 
+              </div>
+              <button id="createbtn" type="submit" class="btn btn-block">{{btn}}</button>
+              <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>  
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+</ngx-spinner>

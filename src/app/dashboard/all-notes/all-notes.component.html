@@ -1,0 +1,49 @@
+<div class="create-btn">
+  <div><h2>All Notes</h2></div>
+  <div><button (click)="addNote()" id="update" type="button" class="btn btn-success">Create Note</button></div>
+</div>
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Date created Column -->
+    <ng-container matColumnDef="CreatedAt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>CreatedAt</th>
+      <td mat-cell *matCellDef="let note">{{note.created | date: 'MM/dd/yyyy'}}</td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="Title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+      <td mat-cell *matCellDef="let note">{{note.title}}</td>
+    </ng-container>
+
+    <!-- Content Column -->
+    <ng-container matColumnDef="Content">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Content</th>
+      <td mat-cell *matCellDef="let note">{{note.content}}</td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+      <td mat-cell *matCellDef="let note">
+        <button id="update" type="button" class="btn btn-success" (click)="editNote(note)">Update</button>
+        <button type="button" class="btn btn-danger" (click)="deleteNote(note)">Delete</button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let note; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="totalNotes"  
+      [pageIndex]="0"
+      [pageSize]="7"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="ball-spin-clockwise">  
+  <p style="color: white">Please Wait. </p>  
+</ngx-spinner>
+
